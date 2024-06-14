@@ -34,6 +34,7 @@
             btnPedidoCozinha = new ReaLTaiizor.Controls.CyberButton();
             btnComanda = new ReaLTaiizor.Controls.CyberButton();
             btnCardapio = new ReaLTaiizor.Controls.CyberButton();
+            btnSair = new ReaLTaiizor.Controls.CyberButton();
             formPrincipal.SuspendLayout();
             gpxPrincipal.SuspendLayout();
             SuspendLayout();
@@ -46,6 +47,7 @@
             formPrincipal.ColorD = Color.FromArgb(27, 27, 27);
             formPrincipal.ColorE = Color.FromArgb(0, 0, 0, 0);
             formPrincipal.ColorF = Color.FromArgb(25, 255, 255, 255);
+            formPrincipal.Controls.Add(btnSair);
             formPrincipal.Controls.Add(gpxPrincipal);
             formPrincipal.Dock = DockStyle.Fill;
             formPrincipal.Location = new Point(0, 0);
@@ -53,7 +55,7 @@
             formPrincipal.Size = new Size(800, 450);
             formPrincipal.TabIndex = 0;
             formPrincipal.TabStop = false;
-            formPrincipal.Text = "Tela Principal";
+            formPrincipal.Text = "Sistema de Comandas";
             formPrincipal.TitleAlign = HorizontalAlignment.Center;
             formPrincipal.TitleHeight = 25;
             // 
@@ -81,13 +83,13 @@
             gpxPrincipal.Lighting = false;
             gpxPrincipal.LinearGradient_Background = false;
             gpxPrincipal.LinearGradientPen = false;
-            gpxPrincipal.Location = new Point(23, 71);
+            gpxPrincipal.Location = new Point(22, 59);
             gpxPrincipal.Name = "gpxPrincipal";
             gpxPrincipal.PenWidth = 15;
             gpxPrincipal.RGB = false;
             gpxPrincipal.Rounding = true;
             gpxPrincipal.RoundingInt = 60;
-            gpxPrincipal.Size = new Size(749, 348);
+            gpxPrincipal.Size = new Size(750, 350);
             gpxPrincipal.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             gpxPrincipal.TabIndex = 0;
             gpxPrincipal.Tag = "Cyber";
@@ -258,6 +260,47 @@
             btnCardapio.Timer_RGB = 300;
             btnCardapio.Click += btnCardapio_Click;
             // 
+            // btnSair
+            // 
+            btnSair.Alpha = 20;
+            btnSair.BackColor = Color.Transparent;
+            btnSair.Background = true;
+            btnSair.Background_WidthPen = 4F;
+            btnSair.BackgroundPen = true;
+            btnSair.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnSair.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnSair.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnSair.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnSair.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSair.Effect_1 = true;
+            btnSair.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSair.Effect_1_Transparency = 25;
+            btnSair.Effect_2 = true;
+            btnSair.Effect_2_ColorBackground = Color.White;
+            btnSair.Effect_2_Transparency = 20;
+            btnSair.Font = new Font("Arial", 11F);
+            btnSair.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSair.Lighting = false;
+            btnSair.LinearGradient_Background = false;
+            btnSair.LinearGradientPen = false;
+            btnSair.Location = new Point(12, 385);
+            btnSair.Name = "btnSair";
+            btnSair.PenWidth = 15;
+            btnSair.Rounding = true;
+            btnSair.RoundingInt = 70;
+            btnSair.Size = new Size(101, 53);
+            btnSair.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSair.TabIndex = 3;
+            btnSair.Tag = "Cyber";
+            btnSair.TextButton = "Sair";
+            btnSair.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSair.Timer_Effect_1 = 5;
+            btnSair.Timer_RGB = 300;
+            btnSair.Click += btnSair_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -284,5 +327,6 @@
         private ReaLTaiizor.Controls.CyberButton btnPedidoCozinha;
         private ReaLTaiizor.Controls.CyberButton btnComanda;
         private ReaLTaiizor.Controls.CyberButton btnCardapio;
+        private ReaLTaiizor.Controls.CyberButton btnSair;
     }
 }
