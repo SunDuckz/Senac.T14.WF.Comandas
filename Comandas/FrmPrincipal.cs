@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Comandas
 {
     public partial class FrmPrincipal : Form
@@ -5,7 +8,26 @@ namespace Comandas
         public FrmPrincipal()
         {
             InitializeComponent();
+            CriarBancoDeDados();
         }
+
+        // método (visibilidade = private, retorno = void)
+        private void CriarBancoDeDados()
+        {
+            // criar uma variavel do tipo AppDbContext
+            // usar a variavel e acessar o contexto
+            // executar a migração == F5
+            using (var banco = new AppDbContext())
+            {
+                // executa a migração (CREATE TABLE Usuarios)
+                banco.Database.Migrate();
+            }
+
+            
+
+
+        }
+
         //evento de clique
         private void btnCardapio_Click(object sender, EventArgs e)
         {

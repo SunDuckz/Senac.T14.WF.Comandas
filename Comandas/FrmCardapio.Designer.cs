@@ -45,7 +45,7 @@
             formCardapio.Dock = DockStyle.Fill;
             formCardapio.Location = new Point(0, 0);
             formCardapio.Name = "formCardapio";
-            formCardapio.Size = new Size(800, 450);
+            formCardapio.Size = new Size(802, 450);
             formCardapio.TabIndex = 0;
             formCardapio.TabStop = false;
             formCardapio.Text = "dreamForm1";
