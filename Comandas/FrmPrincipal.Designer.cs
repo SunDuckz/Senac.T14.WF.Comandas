@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             formPrincipal = new ReaLTaiizor.Forms.DreamForm();
+            btnSair = new ReaLTaiizor.Controls.CyberButton();
             gpxPrincipal = new ReaLTaiizor.Controls.CyberGroupBox();
             btnUsuarios = new ReaLTaiizor.Controls.CyberButton();
             btnPedidoCozinha = new ReaLTaiizor.Controls.CyberButton();
             btnComanda = new ReaLTaiizor.Controls.CyberButton();
             btnCardapio = new ReaLTaiizor.Controls.CyberButton();
-            btnSair = new ReaLTaiizor.Controls.CyberButton();
             formPrincipal.SuspendLayout();
             gpxPrincipal.SuspendLayout();
             SuspendLayout();
@@ -58,6 +58,48 @@
             formPrincipal.Text = "Sistema de Comandas";
             formPrincipal.TitleAlign = HorizontalAlignment.Center;
             formPrincipal.TitleHeight = 25;
+           
+            // 
+            // btnSair
+            // 
+            btnSair.Alpha = 20;
+            btnSair.BackColor = Color.Transparent;
+            btnSair.Background = true;
+            btnSair.Background_WidthPen = 4F;
+            btnSair.BackgroundPen = true;
+            btnSair.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnSair.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnSair.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnSair.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnSair.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnSair.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnSair.Effect_1 = true;
+            btnSair.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnSair.Effect_1_Transparency = 25;
+            btnSair.Effect_2 = true;
+            btnSair.Effect_2_ColorBackground = Color.White;
+            btnSair.Effect_2_Transparency = 20;
+            btnSair.Font = new Font("Arial", 11F);
+            btnSair.ForeColor = Color.FromArgb(245, 245, 245);
+            btnSair.Lighting = false;
+            btnSair.LinearGradient_Background = false;
+            btnSair.LinearGradientPen = false;
+            btnSair.Location = new Point(12, 385);
+            btnSair.Name = "btnSair";
+            btnSair.PenWidth = 15;
+            btnSair.Rounding = true;
+            btnSair.RoundingInt = 70;
+            btnSair.Size = new Size(101, 53);
+            btnSair.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnSair.TabIndex = 3;
+            btnSair.Tag = "Cyber";
+            btnSair.TextButton = "Sair";
+            btnSair.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnSair.Timer_Effect_1 = 5;
+            btnSair.Timer_RGB = 300;
+            btnSair.Click += btnSair_Click;
             // 
             // gpxPrincipal
             // 
@@ -259,47 +301,6 @@
             btnCardapio.Timer_Effect_1 = 5;
             btnCardapio.Timer_RGB = 300;
             btnCardapio.Click += btnCardapio_Click;
-            // 
-            // btnSair
-            // 
-            btnSair.Alpha = 20;
-            btnSair.BackColor = Color.Transparent;
-            btnSair.Background = true;
-            btnSair.Background_WidthPen = 4F;
-            btnSair.BackgroundPen = true;
-            btnSair.ColorBackground = Color.FromArgb(37, 52, 68);
-            btnSair.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            btnSair.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnSair.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            btnSair.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnSair.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnSair.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnSair.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnSair.Effect_1 = true;
-            btnSair.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnSair.Effect_1_Transparency = 25;
-            btnSair.Effect_2 = true;
-            btnSair.Effect_2_ColorBackground = Color.White;
-            btnSair.Effect_2_Transparency = 20;
-            btnSair.Font = new Font("Arial", 11F);
-            btnSair.ForeColor = Color.FromArgb(245, 245, 245);
-            btnSair.Lighting = false;
-            btnSair.LinearGradient_Background = false;
-            btnSair.LinearGradientPen = false;
-            btnSair.Location = new Point(12, 385);
-            btnSair.Name = "btnSair";
-            btnSair.PenWidth = 15;
-            btnSair.Rounding = true;
-            btnSair.RoundingInt = 70;
-            btnSair.Size = new Size(101, 53);
-            btnSair.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnSair.TabIndex = 3;
-            btnSair.Tag = "Cyber";
-            btnSair.TextButton = "Sair";
-            btnSair.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnSair.Timer_Effect_1 = 5;
-            btnSair.Timer_RGB = 300;
-            btnSair.Click += btnSair_Click;
             // 
             // FrmPrincipal
             // 

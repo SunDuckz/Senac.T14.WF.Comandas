@@ -23,7 +23,7 @@ namespace Comandas
                 banco.Database.Migrate();
             }
 
-            
+
 
 
         }
@@ -55,5 +55,6 @@ namespace Comandas
             //encerra o aplicativo
             Application.Exit();
         }
+
     }
 }
