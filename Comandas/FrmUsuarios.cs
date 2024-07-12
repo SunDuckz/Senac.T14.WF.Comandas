@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +28,24 @@ namespace Comandas
             CriarUsuario();
 
             //AtualizarUsuario();
+            AtualizarUsuario();
+        }
+
+        private void AtualizarUsuario()
+        { // consulta um usuario na tabela usando o ID da tela
+            using (var banco = new AppDbContext())
+            {
+                var usuario = banco
+                    .Usuarios
+                    .Where(e => e.id == int.Parse(txtId.TextButton))
+                    .FirstOrDefault();
+
+                usuario.name = txtNome.TextButton;
+                usuario.email = txtEmail.TextButton;
+                usuario.senha = txtSenha.TextButton;
+                banco.SaveChanges();
+
+            }
         }
 
         private void CriarUsuario()
@@ -38,9 +56,9 @@ namespace Comandas
                 //criar um novo usuario
                 var novoUsuario = new Usuario();
                 //atribuimos as propriedads ao usúario
-                novoUsuario.name = "guilherme'";
-                novoUsuario.email = "gui.bampi1@gmail.com";
-                novoUsuario.senha = "123";
+                novoUsuario.name = txtNome.TextButton;
+                novoUsuario.email = txtEmail.TextButton;
+                novoUsuario.senha = txtSenha.TextButton;
                 //salvar as alterações(INSERT INTO usuarios)
                 banco.Usuarios.Add(novoUsuario);
                 banco.SaveChanges();
