@@ -165,6 +165,7 @@
             dgvUsuarios.RowHeadersWidth = 62;
             dgvUsuarios.Size = new Size(731, 113);
             dgvUsuarios.TabIndex = 11;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // cyberGroupBox1
             // 
@@ -558,6 +559,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuarios";
             Text = "dungeonForm1";
+            Load += FrmUsuarios_Load;
             formUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             cyberGroupBox1.ResumeLayout(false);

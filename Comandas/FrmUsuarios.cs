@@ -108,11 +108,11 @@ namespace Comandas
         private void btnNovo_Click(object sender, EventArgs e)
         {
             ehNovo = true;
-            abilitarCampos();
+            HabilitarCampos();
 
         }
 
-        private void abilitarCampos()
+        private void HabilitarCampos()
         {
             txtNome.Enabled = true;
             txtEmail.Enabled = true;
@@ -130,7 +130,43 @@ namespace Comandas
 
             // indica que esta editando um usuario
             ehNovo = false;
+            HabilitarCampos();
+        }
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            CarregarUsuarios();
+        }
 
+
+        private void CarregarUsuarios()
+        {
+            //conectar no banco
+            using (var banco = new AppDbContext())
+            {
+                // Realizar uma consulta na tabela usuarios
+                var usuarios = banco.Usuarios.ToList();
+                // popular os dados do grid (dataGridView)
+                dgvUsuarios.DataSource = usuarios;
+
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //verifica se o indice da linha é Maior ou igual a 0
+            if (e.RowIndex >= 0)
+            {
+                //obter dados da linha
+                var id = dgvUsuarios.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                var nome = dgvUsuarios.Rows[e.RowIndex].Cells["name"].Value.ToString();
+                var email = dgvUsuarios.Rows[e.RowIndex].Cells["email"].Value.ToString();
+                var senha = dgvUsuarios.Rows[e.RowIndex].Cells["Senha"].Value.ToString();
+
+                txtId.TextButton = id;
+                txtNome.TextButton = nome;
+                txtEmail.TextButton = email;
+                txtSenha.TextButton = senha;
+            }
         }
     }
 }
