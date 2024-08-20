@@ -21,5 +21,20 @@ namespace Comandas
         {
             Close();
         }
+
+        private void btnNovoItem_Click(object sender, EventArgs e)
+        {
+            new FrmCardapioCad().ShowDialog();
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
+        {
+            new FrmCardapioCad().ShowDialog();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
