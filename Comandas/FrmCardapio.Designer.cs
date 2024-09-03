@@ -31,12 +31,12 @@
             formCardapio = new ReaLTaiizor.Forms.DreamForm();
             btnNovoItem = new ReaLTaiizor.Controls.CyberButton();
             txtCardapioPesq = new ReaLTaiizor.Controls.CyberTextBox();
-            dataGridView1 = new DataGridView();
-            cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
+            dgvCardapio = new DataGridView();
+            btnEditar = new ReaLTaiizor.Controls.CyberButton();
             btnExcluir = new ReaLTaiizor.Controls.CyberButton();
             btnVoltar = new ReaLTaiizor.Controls.CyberButton();
             formCardapio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCardapio).BeginInit();
             SuspendLayout();
             // 
             // formCardapio
@@ -49,8 +49,8 @@
             formCardapio.ColorF = Color.FromArgb(25, 255, 255, 255);
             formCardapio.Controls.Add(btnNovoItem);
             formCardapio.Controls.Add(txtCardapioPesq);
-            formCardapio.Controls.Add(dataGridView1);
-            formCardapio.Controls.Add(cyberButton2);
+            formCardapio.Controls.Add(dgvCardapio);
+            formCardapio.Controls.Add(btnEditar);
             formCardapio.Controls.Add(btnExcluir);
             formCardapio.Controls.Add(btnVoltar);
             formCardapio.Dock = DockStyle.Fill;
@@ -134,55 +134,56 @@
             txtCardapioPesq.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             txtCardapioPesq.Timer_RGB = 300;
             // 
-            // dataGridView1
+            // dgvCardapio
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 180);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(929, 381);
-            dataGridView1.TabIndex = 8;
+            dgvCardapio.BackgroundColor = Color.FromArgb(37, 52, 68);
+            dgvCardapio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCardapio.Location = new Point(31, 180);
+            dgvCardapio.Name = "dgvCardapio";
+            dgvCardapio.RowHeadersWidth = 62;
+            dgvCardapio.Size = new Size(929, 381);
+            dgvCardapio.TabIndex = 8;
             // 
-            // cyberButton2
+            // btnEditar
             // 
-            cyberButton2.Alpha = 20;
-            cyberButton2.BackColor = Color.Transparent;
-            cyberButton2.Background = true;
-            cyberButton2.Background_WidthPen = 4F;
-            cyberButton2.BackgroundPen = true;
-            cyberButton2.ColorBackground = Color.ForestGreen;
-            cyberButton2.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            cyberButton2.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            cyberButton2.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            cyberButton2.ColorLighting = Color.FromArgb(29, 200, 238);
-            cyberButton2.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton2.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton2.Effect_1 = true;
-            cyberButton2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton2.Effect_1_Transparency = 25;
-            cyberButton2.Effect_2 = true;
-            cyberButton2.Effect_2_ColorBackground = Color.White;
-            cyberButton2.Effect_2_Transparency = 20;
-            cyberButton2.Font = new Font("Arial", 11F);
-            cyberButton2.ForeColor = Color.FromArgb(245, 245, 245);
-            cyberButton2.Lighting = false;
-            cyberButton2.LinearGradient_Background = false;
-            cyberButton2.LinearGradientPen = false;
-            cyberButton2.Location = new Point(813, 585);
-            cyberButton2.Name = "cyberButton2";
-            cyberButton2.PenWidth = 15;
-            cyberButton2.Rounding = true;
-            cyberButton2.RoundingInt = 70;
-            cyberButton2.Size = new Size(165, 53);
-            cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton2.TabIndex = 7;
-            cyberButton2.Tag = "Cyber";
-            cyberButton2.TextButton = "# Editar";
-            cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton2.Timer_Effect_1 = 5;
-            cyberButton2.Timer_RGB = 300;
-            cyberButton2.Click += cyberButton2_Click;
+            btnEditar.Alpha = 20;
+            btnEditar.BackColor = Color.Transparent;
+            btnEditar.Background = true;
+            btnEditar.Background_WidthPen = 4F;
+            btnEditar.BackgroundPen = true;
+            btnEditar.ColorBackground = Color.ForestGreen;
+            btnEditar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnEditar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnEditar.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            btnEditar.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnEditar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnEditar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnEditar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnEditar.Effect_1 = true;
+            btnEditar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnEditar.Effect_1_Transparency = 25;
+            btnEditar.Effect_2 = true;
+            btnEditar.Effect_2_ColorBackground = Color.White;
+            btnEditar.Effect_2_Transparency = 20;
+            btnEditar.Font = new Font("Arial", 11F);
+            btnEditar.ForeColor = Color.FromArgb(245, 245, 245);
+            btnEditar.Lighting = false;
+            btnEditar.LinearGradient_Background = false;
+            btnEditar.LinearGradientPen = false;
+            btnEditar.Location = new Point(813, 585);
+            btnEditar.Name = "btnEditar";
+            btnEditar.PenWidth = 15;
+            btnEditar.Rounding = true;
+            btnEditar.RoundingInt = 70;
+            btnEditar.Size = new Size(165, 53);
+            btnEditar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnEditar.TabIndex = 7;
+            btnEditar.Tag = "Cyber";
+            btnEditar.TextButton = "# Editar";
+            btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnEditar.Timer_Effect_1 = 5;
+            btnEditar.Timer_RGB = 300;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -277,7 +278,7 @@
             Text = "FrmCardapio";
             TransparencyKey = Color.Fuchsia;
             formCardapio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCardapio).EndInit();
             ResumeLayout(false);
         }
 
@@ -285,10 +286,10 @@
 
         private ReaLTaiizor.Forms.DreamForm formCardapio;
         private ReaLTaiizor.Controls.CyberButton btnVoltar;
-        private ReaLTaiizor.Controls.CyberButton cyberButton2;
+        private ReaLTaiizor.Controls.CyberButton btnEditar;
         private ReaLTaiizor.Controls.CyberButton btnExcluir;
         private ReaLTaiizor.Controls.CyberTextBox txtCardapioPesq;
-        private DataGridView dataGridView1;
+        private DataGridView dgvCardapio;
         private ReaLTaiizor.Controls.CyberButton btnNovoItem;
     }
 }

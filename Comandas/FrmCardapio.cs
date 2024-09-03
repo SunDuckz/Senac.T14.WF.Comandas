@@ -15,6 +15,17 @@ namespace Comandas
         public FrmCardapio()
         {
             InitializeComponent();
+            listarCardapios();
+        }
+
+        private void listarCardapios()
+        {
+            using (var banco = new AppDbContext())
+            {
+                var cardapios = banco.Cardapios.ToList();
+                dgvCardapio.DataSource = cardapios;
+
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -24,12 +35,14 @@ namespace Comandas
 
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
-            new FrmCardapioCad().ShowDialog();
+            var ehNovo = true;
+            new FrmCardapioCad(ehNovo).ShowDialog();
         }
 
-        private void cyberButton2_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            new FrmCardapioCad().ShowDialog();
+            var ehNovo = false;
+            new FrmCardapioCad(ehNovo).ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

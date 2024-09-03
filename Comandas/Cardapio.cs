@@ -10,6 +10,8 @@ namespace Comandas
 {
     public class Cardapio
     {
+
+        
         [Key] //definir como primary key
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //auto incremento
         public int id { get; set; }
