@@ -25,7 +25,7 @@ namespace Comandas
             listarCardapios();
         }
 
-        private void listarCardapios()
+        public void listarCardapios()
         {
             using (var banco = new AppDbContext())
             {
@@ -42,19 +42,53 @@ namespace Comandas
 
         private void btnNovoItem_Click(object sender, EventArgs e)
         {
+            //criar uma variavel booleana para indicar o tipo da cad
             var ehNovo = true;
-            new FrmCardapioCad(ehNovo).ShowDialog();
+            new FrmCardapioCad(ehNovo,this).ShowDialog();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var ehNovo = false;
-            new FrmCardapioCad(ehNovo,ID,TITULO,DESCRICAO,PRECO,POSSUI_PREPARO).ShowDialog();
+            new FrmCardapioCad(ehNovo,ID,TITULO,DESCRICAO,PRECO,POSSUI_PREPARO,this).ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
 
+            // exibe uma mensgem de confirmação para o usuario
+            var result = MessageBox.Show($"Confirma a exclusão do item {TITULO}","Excluir Cardapio",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            //se o usuario clicou em não
+            if(result == DialogResult.No)
+            {
+                // para o método
+                return;
+            }
+
+            // chamar o metodo excluir
+            if (ExcluirCardapio(ID))
+            {
+                listarCardapios();
+                MessageBox.Show($"Cardápio '{TITULO}' excluído com sucesso!");
+                btnExcluir.Enabled = false;
+            }
+        }
+
+        private bool ExcluirCardapio(int ID)
+        {
+            //conectar ao banco
+            using (var banco = new AppDbContext())
+            {
+                // buscar o cardapio atraves do id
+                var card = banco.Cardapios.First(c=>c.id == ID);
+                // avisar o banco da exclusão
+                banco.Cardapios.Remove(card);
+                // confirmar para o banco a ação
+                banco.SaveChanges();
+               
+            }
+            return true;
+           
         }
 
         private void dgvCardapio_CellClick(object sender, DataGridViewCellEventArgs e)
